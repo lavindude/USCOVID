@@ -1,6 +1,6 @@
 <?php
-    require_once "pdo.php";
-    //require_once "pdo2.php";
+    //require_once "pdo.php";
+    require_once "pdo2.php";
 
 ?>
 
@@ -15,12 +15,33 @@
         <?php
             $data = $pdo->query("SELECT * FROM Covid");
             
-            echo("<pre>");
+            echo('<table border="1">');
+            echo('<tr><td>');
+            echo('<b>Date</b>');
+            echo('</td><td>');
+            echo('<b>State</b>');
+            echo('</td><td>');
+            echo('<b>Code</b>');
+            echo('</td><td>');
+            echo('<b>Cases<b>');
+            echo('</td><td>');
+            echo('<b>Deaths</b>');
+            echo('</td>');
+
             while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-                echo($row['date'] . ' ' . $row['state'] . ' ' . $row['code'] . ' ' . $row['positive'] . ' ' . $row['deaths']);
-                echo("<br>");
+                echo('<tr><td>');
+                echo($row['date']);
+                echo('</td><td>');
+                echo($row['state']);
+                echo('</td><td>');
+                echo($row['code']);
+                echo('</td><td>');
+                echo($row['positive']);
+                echo('</td><td>');
+                echo($row['deaths']);
+                echo("</td></tr>");
             }
-            echo("</pre>");
+            echo("</table>");
         ?>
 
         <br>
