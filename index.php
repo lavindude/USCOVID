@@ -6,7 +6,7 @@
 
 <html>
     <head>
-        <title>US COVID Map</title>
+        <title>Detailed US COVID Map</title>
     </head>
 
 
