@@ -11,10 +11,10 @@ jsonStateData = json.loads(stateData)
 
 #create a database
 #conn1 = sqlite3.connect('usInfo.sqlite')
-conn1 = pymysql.connect(host='localhost',
-    user='lavindu',
-    password='lavi',
-    db='covid',
+conn1 = pymysql.connect(host='ec2-50-16-198-4.compute-1.amazonaws.com',
+    user='okuihecsskhgrn',
+    password='63ef2d42c5f65365bb37c5c391a37a9329c29cd9f757c1e0d8a58c595164be50',
+    db='davdlic7h5pev6',
     #charset='utf8mb4',
     cursorclass=pymysql.cursors.DictCursor)
 cur = conn1.cursor()
