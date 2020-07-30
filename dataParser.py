@@ -2,7 +2,7 @@ import json
 import http.client
 import sqlite3
 import time
-import pymysql
+from pgdb import connect
 import urllib.request, urllib.parse, urllib.error
 import psycopg2
 
@@ -11,12 +11,7 @@ jsonStateData = json.loads(stateData)
 
 #create a database
 #conn1 = sqlite3.connect('usInfo.sqlite')
-conn1 = pymysql.connect(host='ec2-50-16-198-4.compute-1.amazonaws.com',
-    user='okuihecsskhgrn',
-    password='63ef2d42c5f65365bb37c5c391a37a9329c29cd9f757c1e0d8a58c595164be50',
-    db='davdlic7h5pev6',
-    #charset='utf8mb4',
-    cursorclass=pymysql.cursors.DictCursor)
+conn1 = connect(database='davdlic7h5pev6', host='ec2-50-16-198-4.compute-1.amazonaws.com', user='okuihecsskhgrn', password='63ef2d42c5f65365bb37c5c391a37a9329c29cd9f757c1e0d8a58c595164be50')
 cur = conn1.cursor()
 
 cur.execute('DROP TABLE IF EXISTS Covid')
