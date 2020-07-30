@@ -1,5 +1,6 @@
 <?php
-    require_once "pdo.php";
+    //require_once "pdo.php";
+    require_once "pdo2.php";
 
 ?>
 
@@ -12,16 +13,16 @@
 
     <body>
         <?php
-            $data = $pdo->query("SELECT cases, deaths FROM Covid");
+            $data = $pdo->query("SELECT * FROM Covid");
             
+            echo("<pre>");
             while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-                echo('Cases: ' . $row['cases']);
-                echo('Deaths: ' . $row['deaths']);
+                echo($row['date'] . ' ' . $row['state'] . ' ' . $row['code'] . ' ' . $row['postive'] . ' ' . $row['deaths']);
+                echo("<br>");
             }
+            echo("</pre>");
         ?>
 
-
-        <p>Hello world</p>
     </body>
 
 
