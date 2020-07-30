@@ -12,12 +12,12 @@
 
     <body>
         <?php
-            // $data = $pdo->query("SELECT cases, deaths FROM Covid");
+            $data = $pdo->query("SELECT cases, deaths FROM Covid");
             
-            // while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-            //     echo($row['cases']);
-            //     echo($row['deaths']);
-            // }
+            while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+                echo('Cases: ' . $row['cases']);
+                echo('Deaths: ' . $row['deaths']);
+            }
         ?>
 
 
