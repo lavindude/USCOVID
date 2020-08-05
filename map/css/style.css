@@ -1,0 +1,19 @@
+body {
+    background-color: #15c0ea;
+}
+
+.mapdiv {
+    width:100%;
+    margin: auto;
+}
+
+.mapdiv path {
+    fill: #ff8800;
+    stroke: #000000;
+    stroke-width: 2px;
+    transition: fill 0.3s;
+}
+
+.mapdiv :hover {
+    fill: #0046ff;
+}
