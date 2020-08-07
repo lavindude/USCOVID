@@ -15,9 +15,9 @@
     echo('</td><td>');
     echo('<b>Deaths<b>');
     echo('</td><td>');
-    echo('<b>Positive Cases Increase (daily cases)</b>');
+    echo('<b>Δ Positive Increase</b>');
     echo('</td><td>');
-    echo('<b>Death Increase (daily deaths)</b>');
+    echo('<b>Δ Death Increase</b>');
     echo('</td>');
 
     $data = $pdo->query("SELECT * FROM covid WHERE state_id=47");
