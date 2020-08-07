@@ -1,7 +1,7 @@
 <?php
     require_once "pdo.php";
 
-    echo('<table border="1">');
+    echo('<table style="font-size: large" border="1">');
     echo('<tr><td>');
     echo('<b>Date</b>');
     echo('</td><td>');
@@ -35,5 +35,6 @@
 
     echo("</table>");
 
+    echo('<p ><a href="../index.php">Back to US Map</a></p>');
 
 ?>
