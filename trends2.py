@@ -56,9 +56,9 @@ for i in range(count, count - 50, -1):
     y_pred = linear.predict(x)
     plt.plot(x, y_pred, color='red')
     plt.scatter(x, y)
-    # plt.xlabel('Day')
-    # plt.ylabel('Positive Increase')
-    # plt.show()
+    plt.xlabel('Day')
+    plt.ylabel('Positive Increase')
+    plt.show()
 
     cur.execute('SELECT state_id FROM covid WHERE state_data_id=%s', [i])
     state_id = cur.fetchone()[0]
