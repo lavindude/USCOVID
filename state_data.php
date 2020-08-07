@@ -4,6 +4,16 @@
 
 <?php
     require_once "pdo.php";
+    $id = $_GET['state_id'];
+
+    $stateData = $data = $pdo->query("SELECT * FROM states WHERE state_id=$id");
+    $stateName = '';
+    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+        $stateData = $row['name'];
+    }
+    echo("<h1>");
+    echo($stateName);
+    echo("</h1>");
 
     echo('<table border="1">');
     echo('<tr><td>');
@@ -19,8 +29,6 @@
     echo('</td><td>');
     echo('<b>Δ Death Increase</b>');
     echo('</td>');
-
-    $id = $_GET['state_id'];
 
     $data = $pdo->query("SELECT * FROM covid WHERE state_id=$id");
     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
