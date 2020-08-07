@@ -14,16 +14,17 @@
 <body>
     <p>***</p> 
     <p style="position: relative; left: 5px; font-family: monospace;">Click each state to see COVID statistics about them.</p> 
+    <p>Hover over each state to see the name of the state.</p>
     <p>***</p> <br>
     <p>KEY:</p>
-    <p style="color: red">Red = dangerous</p> 
-    <p style="color: yellow">Yellow = moderate</p> 
-    <p style="color: green">Green = safe</p>  <br>
+    <p style="color: red">Red = Positive Increase Trend is greater than 50</p> 
+    <p style="color: yellow">Yellow = Positive Increase Trend is between 0 and 50</p> 
+    <p style="color: green">Green = Positive Increase Trend is decreasing</p>  <br>
     <p style="font-family: monospace;">Please note that it would be wise to keep some</p>
     <p style="font-family: monospace;">distance from other people no matter the color</p>
     <p style="font-family: monospace;">of the state. </p> <br> <br>
-    <p style="font-family: monospace;">Click <a href="algorithm.php">here</a> if you want to know how the</p>
-    <p style="font-family: monospace;">colors are assigned to each state.</p>
+    <p style="font-family: monospace;">Click <a href="algorithm.php">here</a> if you want to learn more about</p>
+    <p style="font-family: monospace;">how the colors are assigned to each state.</p>
     <div class="mapdiv">
         <svg
         
@@ -35,7 +36,7 @@
         >
         <defs>
             <style type="map/css/style.css"> </style>
-        </defs>
+        </defs>  
         <a xlink:title="Massachusetts" xlink:href="state_data.php?state_id=19">
         <path
             inkscape:connector-curvature="0"
@@ -55,7 +56,7 @@
                         echo('style = "fill: #1be44f;"'); 
                     }
                 }
-                
+              
             ?>
             data-name="Massachusetts"
             data-id="MA"
