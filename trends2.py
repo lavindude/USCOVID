@@ -28,7 +28,7 @@ covid_data = pd.read_sql_table("covid", engine)
 # for item in rows:
 #     state = item[2]
 #     print(state)
-cur.execute('SELECT COUNT(*) FROM covid;')
+cur.execute('SELECT MAX(state_data_id) FROM covid;')
 count = cur.fetchone()[0]
 
 #get the trend for each state based off 10 days of data (counts backwards)
@@ -36,38 +36,52 @@ day = 10
 for i in range(count, count - 50, -1):
     x = list()
     y = list()
-    cur.execute('SELECT positiveincrease FROM covid WHERE state_data_id=%s', [i])
-    p_increase = cur.fetchone()[0]
-    x.append(1)
-    y.append(p_increase)
 
-    #regression
+    #10 day data
+    current = i
+    for day in range(10, 8, -1):
+        x.append(day)
+
+        cur.execute('SELECT positiveincrease FROM covid WHERE state_data_id=%s', [current])
+        p_increase = cur.fetchone()[0]
+        y.append(p_increase)
+        current = current - 50
+
+    #regression, first convert to pandas series
     x = pd.Series(x).values
     y = pd.Series(y).values
     x = x[:, np.newaxis]
-    linear = linear_model.LinearRegression(fit_intercept= True)
+    linear = linear_model.LinearRegression(fit_intercept=True)
     linear.fit(x, y)
     y_pred = linear.predict(x)
     plt.plot(x, y_pred, color='red')
     plt.scatter(x, y)
-    plt.xlabel('Day')
-    plt.ylabel('Positive Increase')
-    plt.show()
+    # plt.xlabel('Day')
+    # plt.ylabel('Positive Increase')
+    # plt.show()
 
-# x = covid_data['date'].values
-# x = x[:, np.newaxis]
-# y = covid_data['positiveincrease'].values
+    cur.execute('SELECT state_id FROM covid WHERE state_data_id=%s', [i])
+    state_id = cur.fetchone()[0]
 
-# linear = linear_model.LinearRegression(fit_intercept= True)
+    m = linear.coef_
 
-# linear.fit(x, y)
+    print('The slope is ', m)
+    if m < 0:
+        cur.execute("UPDATE states SET color='g' WHERE state_id=%s", [state_id])
+        print("Green")
+    elif m >= 0 and m < 50:
+        cur.execute("UPDATE states SET color='y' WHERE state_id=%s", [state_id])
+        print("Yellow")
+    else:
+        cur.execute("UPDATE states SET color='r'WHERE state_id=%s", [state_id])
+        print("Red")
 
-# y_pred = linear.predict(x)
-# plt.plot(x, y_pred, color='red')
-# plt.scatter(x, y)
-# # plt.xlabel('Death Increase')
-# # plt.ylabel('Positive Increase')
-# plt.show()
+    continue
 
+#delete (600 rows, 10+ days of data):
+#distance between 0 and first set of data
+# d = count - 600
+
+# cur.execute('DELETE FROM covid WHERE state_id=%s', [d])
 
 conn1.commit()
