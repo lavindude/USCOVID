@@ -2,7 +2,7 @@ table {
     table-layout: fixed;
     width: 100%;
     border-collapse: collapse;
-    border: 3px solid #718e84;
+    border: 3px solid #010202;
 }
   
 thead th:nth-child(1) {
