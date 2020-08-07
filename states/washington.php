@@ -1,7 +1,11 @@
+<head>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
 <?php
     require_once "pdo.php";
 
-    echo('<table style="font-size: large" border="1">');
+    echo('<table border="1">');
     echo('<tr><td>');
     echo('<b>Date</b>');
     echo('</td><td>');
