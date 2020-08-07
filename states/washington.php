@@ -39,6 +39,6 @@
 
     echo("</table>");
 
-    echo('<p ><a href="../index.php">Back to US Map</a></p>');
+    echo('<p ><a href="../">Back to US Map</a></p>');
 
 ?>
