@@ -53,9 +53,9 @@ for i in range(count, count - 50, -1):
     x = x[:, np.newaxis]
     linear = linear_model.LinearRegression(fit_intercept=True)
     linear.fit(x, y)
-    y_pred = linear.predict(x)
-    plt.plot(x, y_pred, color='red')
-    plt.scatter(x, y)
+    # y_pred = linear.predict(x)
+    # plt.plot(x, y_pred, color='red')
+    # plt.scatter(x, y)
     plt.xlabel('Day')
     plt.ylabel('Positive Increase')
     plt.show()
