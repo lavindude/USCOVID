@@ -6,13 +6,12 @@
     require_once "pdo.php";
     $id = $_GET['state_id'];
 
-    $stateData = $data = $pdo->query("SELECT * FROM states WHERE state_id=$id");
-    $stateName = '';
-    while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-        $stateData = $row['name'];
-    }
+    $stateData = $pdo->query("SELECT * FROM states WHERE state_id=$id");
     echo("<h1>");
-    echo($stateName);
+    while ($row = $stateData->fetch(PDO::FETCH_ASSOC)) {
+        echo($row['name']);
+    }
+    
     echo("</h1>");
 
     echo('<table border="1">');
