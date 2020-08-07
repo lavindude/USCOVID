@@ -20,7 +20,9 @@
     echo('<b>Δ Death Increase</b>');
     echo('</td>');
 
-    $data = $pdo->query("SELECT * FROM covid WHERE state_id=47");
+    $id = $_GET['state_id'];
+
+    $data = $pdo->query("SELECT * FROM covid WHERE state_id=$id");
     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
         echo('<tr><td>');
         echo($row['date']);
@@ -39,6 +41,6 @@
 
     echo("</table>");
 
-    echo('<p ><a href="../">Back to US Map</a></p>');
+    echo('<p ><a href="./">Back to US Map</a></p>');
 
 ?>
