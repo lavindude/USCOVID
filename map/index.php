@@ -95,7 +95,7 @@
             inkscape:connector-curvature="0"
             id="WA"
             <?php 
-                $data = $pdo->query("SELECT color FROM states WHERE state_id=47");
+                $data = $pdo->query("SELECT * FROM states WHERE state_id=47");
                 while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
                     if ($row['color'] == 'y') {
                         echo('style = "fill: #eeff00;"'); 
