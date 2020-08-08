@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="styleAlg.css">    
+    <link rel="stylesheet" href="styleAlg.css">  
+    <link rel="img" href="graph.png">    
 </head>
 <body>
 <p>Welcome to my COVID map! I hope you are safe and healthy.</p>
 <img src="graph.png"/>
+<br>
 
 </html>
 <?php
