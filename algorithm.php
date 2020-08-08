@@ -5,7 +5,7 @@
 </head>
 <body>
 <p>Welcome to my COVID map! I hope you are safe and healthy.</p>
-<img src="graph.png">
+<img src="graph.png"/>
 
 </html>
 <?php
