@@ -1346,6 +1346,8 @@
         </a>
         </svg>
     </div>
+    <p>Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
+    <p>If you have any questions, comments, or concerns, please email me at lavindudev@hotmail.com</p>
 </body>
 
 </html>
