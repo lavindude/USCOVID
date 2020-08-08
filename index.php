@@ -23,7 +23,7 @@
     <p style="font-family: monospace;">Please note that it would be wise to keep some</p>
     <p style="font-family: monospace;">distance from other people no matter the color</p>
     <p style="font-family: monospace;">of the state. </p> <br> <br>
-    <p style="font-family: monospace;">Click <a href="algorithm.php">here</a> if you want to learn more about</p>
+    <p style="font-family: monospace;">Click <a href="algorithm.html">here</a> if you want to learn more about</p>
     <p style="font-family: monospace;">how the colors are assigned to each state.</p>
     <div class="mapdiv">
         <svg
