@@ -1,0 +1,82 @@
+CREATE TABLE States (
+  state_id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  population INTEGER
+);
+
+
+INSERT INTO states (name, population) VALUES ('Alaska', 731545);
+INSERT INTO States (name, population) VALUES ('Alabama', 4903000);
+INSERT INTO States (name, population) VALUES ('Arkansas', 3018000);
+INSERT INTO States (name, population) VALUES ('Arizona', 7279000);
+INSERT INTO States (name, population) VALUES ('California', 39510000);
+INSERT INTO States (name, population) VALUES ('Colorado', 5759000);
+INSERT INTO States (name, population) VALUES ('Connecticut', 3565000);
+INSERT INTO States (name, population) VALUES ('Delaware', 973764);
+INSERT INTO States (name, population) VALUES ('Florida', 21480000);
+INSERT INTO States (name, population) VALUES ('Georgia', 10620000);
+INSERT INTO States (name, population) VALUES ('Hawaii', 1416000);
+INSERT INTO States (name, population) VALUES ('Iowa', 3155000);
+INSERT INTO States (name, population) VALUES ('Idaho', 1787000);
+INSERT INTO States (name, population) VALUES ('Illinois', 12670000);
+INSERT INTO States (name, population) VALUES ('Indiana', 6732000);
+INSERT INTO States (name, population) VALUES ('Kansas', 2913000);
+INSERT INTO States (name, population) VALUES ('Kentucky', 4468000);
+INSERT INTO States (name, population) VALUES ('Louisiana', 4649000);
+INSERT INTO States (name, population) VALUES ('Massachusetts', 6893000);
+INSERT INTO States (name, population) VALUES ('Maryland', 6046000);
+INSERT INTO States (name, population) VALUES ('Maine', 1344000);
+INSERT INTO States (name, population) VALUES ('Michigan', 9987000);
+INSERT INTO States (name, population) VALUES ('Minnesota', 5640000);
+INSERT INTO States (name, population) VALUES ('Missouri', 6137000);
+INSERT INTO States (name, population) VALUES ('Mississippi', 2976000);
+INSERT INTO States (name, population) VALUES ('Montana', 1069000);
+INSERT INTO States (name, population) VALUES ('North Carolina', 10490000);
+INSERT INTO States (name, population) VALUES ('North Dakota', 762062);
+INSERT INTO States (name, population) VALUES ('Nebraska', 1934000);
+INSERT INTO States (name, population) VALUES ('New Hampshire', 1360000);
+INSERT INTO States (name, population) VALUES ('New Jersey', 8882000);
+INSERT INTO States (name, population) VALUES ('New Mexico', 2097000);
+INSERT INTO States (name, population) VALUES ('New York', 8399000);
+INSERT INTO States (name, population) VALUES ('Nevada', 3080000);
+INSERT INTO States (name, population) VALUES ('Ohio', 11690000);
+INSERT INTO States (name, population) VALUES ('Oklahoma', 3957000);
+INSERT INTO States (name, population) VALUES ('Oregon', 4218000);
+INSERT INTO States (name, population) VALUES ('Pennsylvania', 12800000);
+INSERT INTO States (name, population) VALUES ('Rhode Island', 1059000);
+INSERT INTO States (name, population) VALUES ('South Carolina', 5149000);
+INSERT INTO States (name, population) VALUES ('South Dakota', 884659);
+INSERT INTO States (name, population) VALUES ('Tennessee', 6829000);
+INSERT INTO States (name, population) VALUES ('Texas', 29000000);
+INSERT INTO States (name, population) VALUES ('Utah', 3206000);
+INSERT INTO States (name, population) VALUES ('Virginia', 8536000);
+INSERT INTO States (name, population) VALUES ('Vermont', 623989);
+INSERT INTO States (name, population) VALUES ('Washington', 7615000);
+INSERT INTO States (name, population) VALUES ('Wisconsin', 5822000);
+INSERT INTO States (name, population) VALUES ('West Virginia', 1792000);
+INSERT INTO States (name, population) VALUES ('Wyoming', 578759);
+INSERT INTO states (name, population) VALUES ('American Samoa', 0);
+INSERT INTO states (name, population) VALUES ('Guam', 0);
+INSERT INTO states (name, population) VALUES ('Northern Mariana Islands', 0);
+INSERT INTO states (name, population) VALUES ('Puerto Rico', 0);
+INSERT INTO states (name, population) VALUES ('Virgin Islands', 0);
+INSERT INTO states (name, population) VALUES ('District of Columbia', 0);
+
+
+
+CREATE TABLE Date (date_id SERIAL PRIMARY KEY, date VARCHAR(100) NOT NULL);
+
+
+CREATE TABLE Covid (date VARCHAR(255), state_id SERIAL, code TEXT, positive INTEGER, negative INTEGER,
+hospitalNow INTEGER, hospitalTotal INTEGER, recovered INTEGER, deaths INTEGER, positiveIncrease INTEGER, negativeIncrease INTEGER,  
+
+FOREIGN KEY(state_id) REFERENCES states (state_id)
+
+) ENGINE=INNODB;
+
+
+SELECT States.name FROM states JOIN covid ON States.state_id = covid.state_id;
+
+********Query??
+SELECT covid.date, covid.state_id, covid.positive, covid.negative, covid.hospitalnow, covid.hospitaltotal, covid.recovered, covid.deaths, 
+covid.positiveincrease, covid.negativeincrease FROM covid JOIN states ON states.state_id = covid.state_id;
