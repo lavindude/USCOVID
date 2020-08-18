@@ -43,7 +43,7 @@ for i in range(1, 51):
         y.append(data[0])
         day += 1  
 
-    #regression, first convert to pandas series
+    #linear regression, first convert to pandas series
     #################################
     x = pd.Series(x).values
     y = pd.Series(y).values
@@ -62,7 +62,7 @@ for i in range(1, 51):
 
     m = linear.coef_
 
-    print('The slope is ', m)
+    print('The slope is ', m, 'for state_id =', state_id)
     if m < 0:
         cur.execute("UPDATE states SET color='g' WHERE state_id=%s", [state_id])
         print("Green")

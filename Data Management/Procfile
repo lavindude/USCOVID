@@ -1,0 +1,2 @@
+worker: python dataParser.py
+worker: python trends.py
