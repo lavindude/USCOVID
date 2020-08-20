@@ -29,7 +29,7 @@
     echo('<b>Δ Deaths</b>');
     echo('</td>');
 
-    $data = $pdo->query("SELECT * FROM covid WHERE state_id=$id");
+    $data = $pdo->query("SELECT * FROM covid WHERE state_id=$id ORDER BY date");
     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
         echo('<tr><td>');
         echo($row['date']);
