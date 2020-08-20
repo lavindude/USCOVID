@@ -28,13 +28,18 @@ covid_data = pd.read_sql_table("covid", engine)
 cur.execute('SELECT MAX(state_data_id) FROM covid;')
 count = cur.fetchone()[0]
 
+codes = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", 
+"IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", 
+"MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", 
+"OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", 
+"WI", "WV", "WY"]
 
-for i in range(1, 51):
+state_id = 1
+for code in codes:
     x = list()
     y = list()
 
-    current = i
-    cur.execute('SELECT positiveincrease FROM covid WHERE state_id=%s', [i])
+    cur.execute('SELECT positiveincrease FROM covid WHERE code=%s', [code])
     p_increase_data = list(cur.fetchall())
 
     day = 1
@@ -57,22 +62,30 @@ for i in range(1, 51):
     # plt.ylabel('Positive Increase')
     # plt.show()
 
-    cur.execute('SELECT state_id FROM covid WHERE state_data_id=%s', [i])
+    cur.execute('SELECT state_id FROM covid WHERE code=%s', [code])
     state_id = cur.fetchone()[0]
 
     m = linear.coef_
 
-    print('The slope is ', m, 'for state_id =', state_id)
-    if m < 0:
+    cur.execute('SELECT population FROM states WHERE state_id=%s', [state_id])
+    posIncreaseDivPop = cur.fetchone()[0]
+
+    #posDivPop score algorithm:
+    posDivPop_score = m / posIncreaseDivPop
+    print(posDivPop_score)
+
+    print('The slope is ', m, 'for code =', code)
+    if posDivPop_score < 0:
         cur.execute("UPDATE states SET color='g' WHERE state_id=%s", [state_id])
         print("Green")
-    elif m >= 0 and m < 50:
+    elif posDivPop_score >= 0 and posDivPop_score < 0.000008:
         cur.execute("UPDATE states SET color='y' WHERE state_id=%s", [state_id])
         print("Yellow")
     else:
         cur.execute("UPDATE states SET color='r'WHERE state_id=%s", [state_id])
         print("Red")
 
+    state_id += 1
     continue
 
 ################################################

@@ -6,6 +6,7 @@ from pgdb import connect
 import urllib.request, urllib.parse, urllib.error
 import psycopg2
 from datetime import date
+import datetime
 
 stateData = urllib.request.urlopen('https://covidtracking.com/api/v1/states/current.json').read()
 jsonStateData = json.loads(stateData)
@@ -86,6 +87,11 @@ for item in jsonStateData:
     cur.execute(query, insert_tuple)
     stateid += 1
 
+now = datetime.datetime.now()
+delTime = now - datetime.timedelta(days=13)
+delTime = delTime.date()
+
+cur.execute("DELETE FROM covid WHERE date=%s;", [delTime])
 
 conn1.commit()
 
