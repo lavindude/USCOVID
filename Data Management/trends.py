@@ -56,10 +56,8 @@ for code in codes:
     linear = linear_model.LinearRegression(fit_intercept=True)
     linear.fit(x, y)
     y_pred = linear.predict(x)
-    plt.plot(x, y_pred, color='red')
-    plt.scatter(x, y)
-    # plt.xlabel('Day')
-    # plt.ylabel('Positive Increase')
+    # plt.plot(x, y_pred, color='red')
+    # plt.scatter(x, y)
     # plt.show()
 
     cur.execute('SELECT state_id FROM covid WHERE code=%s', [code])
