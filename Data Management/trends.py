@@ -34,6 +34,8 @@ codes = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI",
 "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", 
 "WI", "WV", "WY"]
 
+today = date.today()
+today = str(today)
 state_id = 1
 for code in codes:
     x = list()
@@ -56,32 +58,38 @@ for code in codes:
     linear = linear_model.LinearRegression(fit_intercept=True)
     linear.fit(x, y)
     y_pred = linear.predict(x)
-    # plt.plot(x, y_pred, color='red')
-    # plt.scatter(x, y)
+    plt.plot(x, y_pred, color='red')
+    plt.scatter(x, y)
+    # plt.xlabel('Day')
+    # plt.ylabel('Positive Increase')
     # plt.show()
 
     cur.execute('SELECT state_id FROM covid WHERE code=%s', [code])
     state_id = cur.fetchone()[0]
 
     m = linear.coef_
-
+    
+    cur.execute('SELECT positive FROM covid WHERE state_id=%s ORDER BY date DESC', [state_id])
+    positive = cur.fetchone()[0]
+    
     cur.execute('SELECT population FROM states WHERE state_id=%s', [state_id])
-    posIncreaseDivPop = cur.fetchone()[0]
+    population = cur.fetchone()[0]
 
-    #posDivPop score algorithm:
-    posDivPop_score = m / posIncreaseDivPop
+    #casesDivPop score algorithm:
+    posDivPop_score = positive / population
     print(posDivPop_score)
 
     print('The slope is ', m, 'for code =', code)
-    if posDivPop_score < 0:
-        cur.execute("UPDATE states SET color='g' WHERE state_id=%s", [state_id])
-        print("Green")
-    elif posDivPop_score >= 0 and posDivPop_score < 0.000008:
+    if m > 25 and posDivPop_score > 0.01:
+        cur.execute("UPDATE states SET color='r' WHERE state_id=%s", [state_id])
+        print("Red")
+    else:
+      if m >= 0 and m < 50 and posDivPop_score > 0.007:
         cur.execute("UPDATE states SET color='y' WHERE state_id=%s", [state_id])
         print("Yellow")
-    else:
-        cur.execute("UPDATE states SET color='r'WHERE state_id=%s", [state_id])
-        print("Red")
+      else:
+        cur.execute("UPDATE states SET color='g'WHERE state_id=%s", [state_id])
+        print("Green")
 
     state_id += 1
     continue
