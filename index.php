@@ -1346,7 +1346,7 @@
         </a>
         </svg>
     </div>
-    <p style="position: relative; top: -1200px">Updated every day at 6:00 am PST</p>
+    <p style="position: relative; top: -1300px">Updated every day at 6:00 am PST</p>
     <p>Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
     <p>If you have any questions, comments, or concerns, please email me at lavindudev@hotmail.com</p>
 </body>
