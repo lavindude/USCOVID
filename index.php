@@ -1346,9 +1346,9 @@
         </a>
         </svg>
     </div>
-    <p style="position: relative; top: -1430px">Updated every day at 6:00 am PST.</p>
-    <p style="position: relative; top: -1420px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
-    <p style="position: relative; top: -1410px">If you have any questions, comments, or concerns, please email me at lavindude@gmail.com</p>
+    <p style="position: relative; top: -1450px">Updated every day at 6:00 am PST.</p>
+    <p style="position: relative; top: -1440px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
+    <p style="position: relative; top: -1430px">If you have any questions, comments, or concerns, please email me at lavindude@gmail.com</p>
 </body>
 
 </html>
