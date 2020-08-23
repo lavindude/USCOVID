@@ -50,6 +50,7 @@ nav li {
 }
 
 nav a {
+    font-family: fantasy;
     color: #444;
     text-decoration: none;
     text-transform: uppercase;
