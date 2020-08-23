@@ -2,7 +2,7 @@
 body {
     background-color: #15c0ea;
     font-family: 'Work Sans', sans-serif;
-	font-weight: 800;
+	font-weight: 300;
 }
 
 .mapdiv {
@@ -21,7 +21,7 @@ body {
     fill: #0046ff;
 }
 
-.container {
+/* .container {
 	width: 80%;
 	margin: 0 auto;
 }
@@ -80,4 +80,4 @@ nav ul {
   
   nav a:hover::before {
     width: 100%;
-  } */
+  } */ */
