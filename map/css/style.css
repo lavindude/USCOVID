@@ -17,3 +17,7 @@ body {
 .mapdiv :hover {
     fill: #0046ff;
 }
+
+header {
+    background: orange;
+}

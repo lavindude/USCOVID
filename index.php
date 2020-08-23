@@ -8,10 +8,23 @@
 <head>
     <title>US COVID Trends Map</title>
     <link rel="stylesheet" href="map/css/style.css">
-    <h1 style="position: relative; left: 5px; font-family: cursive;">Map by Lavindu Devadithya</h1>
+    <!--<h1 style="position: relative; left: 5px; font-family: cursive;">Map by Lavindu Devadithya</h1>-->
 </head>
 
 <body>
+    <header>
+
+    <div class="navB">
+    <nav>
+        <ul>
+            <li><a href="index.php">Map</a></li>
+            <li><a href="algorithm.html">Algorithm</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+
+    </nav>
+    </header>
+
     <p>***</p> 
     <p style="position: relative; left: 5px; font-family: monospace;">Click each state to see COVID statistics about them.</p> 
     <p style="position: relative; left: 5px; font-family: monospace;">Hover over each state to see the name of the state.</p>
@@ -1346,9 +1359,10 @@
         </a>
         </svg>
     </div>
-    <p style="position: relative; top: -1450px">Updated every day at 6:00 am PST. ↓ </p>
+    <p style="position: relative; top: -1450px">Updated every day at 6:00 am PST ↓ </p>
     <p style="position: relative; top: -1445px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
-    <p style="position: relative; top: -1440px">If you have any questions, comments, or concerns, please email me at lavindude@gmail.com</p>
+    <p style="position: relative; top: -1440px">If you have any questions, comments, or concerns, please email me at lavindudev@hotmail.com</p>
+    <p style="position: relative; top: -1435px">Map made by Lavindu Devadithya</p>
 </body>
 
 </html>
