@@ -8,8 +8,8 @@
 <head>
     <title>US COVID Trends Map</title>
     <link rel="stylesheet" href="map/css/style.css">
-    <link href="map/css/style2.css" rel="stylesheet" type="text/css">
-    <header href="map/css/style2.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
+    <header>
         <div class="container">
             <nav>
                 <ul>
