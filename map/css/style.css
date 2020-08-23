@@ -21,3 +21,8 @@ body {
 header {
     background: orange;
 }
+
+.navB {
+    width: 80%;
+    margin: 0 auto;
+}

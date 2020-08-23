@@ -15,14 +15,14 @@
     <header>
 
     <div class="navB">
-    <nav>
-        <ul>
-            <li><a href="index.php">Map</a></li>
-            <li><a href="algorithm.html">Algorithm</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+        <nav>
+            <ul>
+                <li><a href="index.php">Map</a></li>
+                <li><a href="algorithm.html">Algorithm</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
 
-    </nav>
+        </nav>
     </header>
 
     <p>***</p> 
