@@ -9,8 +9,7 @@
     <title>US COVID Trends Map</title>
     <link rel="stylesheet" href="map/css/style.css">
     <link href="map/css/style2.css" rel="stylesheet" type="text/css">
-    <header>
-        
+    <header href="map/css/style2.css" rel="stylesheet" type="text/css">
         <div class="container">
             <nav>
                 <ul>
