@@ -49,6 +49,7 @@
 
     echo("</table>");
 
+    echo("<br>");
     echo("**Note that some states may not have 'recovered' data because that data is not obtainable for certain states.**");
     echo('<p ><a href="./">Back to US Map</a></p>');
 
