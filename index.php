@@ -23,6 +23,7 @@
             </ul>
 
         </nav>
+    </div>
     </header>
 
     <p>***</p> 
