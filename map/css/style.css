@@ -18,11 +18,21 @@ body {
     fill: #0046ff;
 }
 
+.navB {
+    width: 80%;
+    margin: 0 auto;
+}
+
 header {
     background: orange;
 }
 
-.navB {
-    width: 80%;
-    margin: 0 auto;
+header::after {
+    content: '';
+    display: table;
+    clear: both;
+}
+
+nav {
+    float: right;
 }
