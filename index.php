@@ -14,7 +14,7 @@
 <body>
     <header>
 
-        <div class="navB">
+        <div class="container">
             <nav>
                 <ul>
                     <li><a href="index.php">Map</a></li>
