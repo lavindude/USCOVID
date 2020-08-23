@@ -25,18 +25,18 @@
 
 <body>
     <p>***</p> 
-    <p style="position: relative; left: 5px; font-family: monospace;">Click each state to see COVID statistics about them.</p> 
-    <p style="position: relative; left: 5px; font-family: monospace;">Hover over each state to see the name of the state.</p>
+    <p style="position: relative; left: 5px; font-size: 15px;">Click each state to see COVID statistics about them.</p> 
+    <p style="position: relative; left: 5px; font-size: 15px;">Hover over each state to see the name of the state.</p>
     <p>***</p> <br>
     <p>KEY:</p>
-    <p style="color: #ff000f">Red = Positive Increase Trend is trending up</p> 
-    <p style="color: #eeff00">Yellow = Positive Increase Trend is moderate</p> 
-    <p style="color: #1be44f">Green = Positive Increase Trend is negative</p>  <br>
-    <p style="font-family: monospace;">Please note that it would be wise to keep some</p>
-    <p style="font-family: monospace;">distance from other people no matter the color</p>
-    <p style="font-family: monospace;">of the state. </p> <br> <br>
-    <p style="font-family: monospace;">Click <a href="algorithm.html">HERE</a> if you want to learn more about</p>
-    <p style="font-family: monospace;">how the colors are assigned to each state.</p>
+    <p style="color: #ff000f; font-size: 15px;">Red = Positive Increase Trend is trending up</p> 
+    <p style="color: #eeff00; font-size: 15px;">Yellow = Positive Increase Trend is moderate</p> 
+    <p style="color: #1be44f; font-size: 15px;">Green = Positive Increase Trend is negative</p>  <br>
+    <p style="font-size: 15px;">Please note that it would be wise to keep some</p>
+    <p style="font-size: 15px;">distance from other people no matter the color</p>
+    <p style="font-size: 15px;">of the state. </p> <br> <br>
+    <p style="font-size: 15px;">Click <a href="algorithm.html">HERE</a> if you want to learn more about</p>
+    <p style="font-size: 15px;">how the colors are assigned to each state.</p>
     <div class="mapdiv">
         <svg
         
