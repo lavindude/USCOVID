@@ -8,10 +8,6 @@
 <head>
     <title>US COVID Trends Map</title>
     <link rel="stylesheet" href="map/css/style.css">
-    <!--<h1 style="position: relative; left: 5px; font-family: cursive;">Map by Lavindu Devadithya</h1>-->
-</head>
-
-<body>
     <header>
 
         <div class="container">
@@ -25,7 +21,9 @@
             </nav>
         </div>
     </header>
+</head>
 
+<body>
     <p>***</p> 
     <p style="position: relative; left: 5px; font-family: monospace;">Click each state to see COVID statistics about them.</p> 
     <p style="position: relative; left: 5px; font-family: monospace;">Hover over each state to see the name of the state.</p>
