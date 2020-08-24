@@ -38,7 +38,7 @@
     <div class="mapdiv">
         <svg
         xmlns="http://www.w3.org/2000/svg"
-        height="930" width="1700"
+        height="730" width="1700"
         version="1.1"
         viewBox="0 0 1000 589"
         style="position: relative; left: 140px; top: -500px"
