@@ -13,7 +13,7 @@
 
 body {
     background-color: #20d9df;
-    font-size: 15px;
+    font-size: 30px;
     font-family: 'Work Sans', sans-serif;
 	font-weight: 800;
 }
@@ -46,7 +46,7 @@ nav ul {
 nav li {
     display: inline-block;
     margin-left: 70px;
-    padding-top: 53px;
+    padding-top: 23px;
 
     position: relative;
 }
