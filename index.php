@@ -1355,8 +1355,8 @@
     <p style="">Please note that it would be wise to keep some</p>
     <p style="">distance from other people no matter the color</p>
     <p style="">of the state. </p> <br> <br>
-    <p style="position: relative; top: -1450px">Updated every day at 6:00 am PST ↓ </p>
-    <p style="position: relative; top: -1445px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
+    <p style="position: relative; top: auto">Updated every day at 6:00 am PST ↓ </p>
+    <p style="position: relative; top: auto">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
 </body>
 
 </html>
