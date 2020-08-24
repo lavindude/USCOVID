@@ -25,8 +25,8 @@
 
 <body>
     <p>***</p> 
-    <p style="position: relative; left: 5px;">Click each state to see COVID statistics about them.</p> 
-    <p style="position: relative; left: 5px;">Hover over each state to see the name of the state.</p>
+    <p style="position: relative; left: 5px; font-size: 10px;">Click each state to see COVID statistics about them.</p> 
+    <p style="position: relative; left: 5px; font-size: 10px;">Hover over each state to see the name of the state.</p>
     <p>***</p> <br>
     <p>KEY:</p>
     <p style="color: #ff000f;">Red = Positive Increase Trend is trending up</p> 
