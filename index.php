@@ -29,12 +29,12 @@
     <p style="position: relative; left: 5px; font-size: 15px;">Hover over each state to see the name of the state.</p>
     <p>***</p> <br>
     <p>KEY:</p>
-    <p style="color: #ff000f;">Red = Positive Increase Trend is trending up</p> 
-    <p style="color: #eeff00;">Yellow = Positive Increase Trend is moderate</p> 
-    <p style="color: #1be44f;">Green = Positive Increase Trend is negative</p>  <br>
-    <p style="">Please note that it would be wise to keep some</p>
-    <p style="">distance from other people no matter the color</p>
-    <p style="">of the state. </p> <br> <br>
+    <p style="color: #ff000f; font-size: 15px;">Red = Positive Increase Trend is trending up</p> 
+    <p style="color: #eeff00; font-size: 15px;">Yellow = Positive Increase Trend is moderate</p> 
+    <p style="color: #44BB51; font-size: 15px;">Green = Positive Increase Trend is negative</p>  <br>
+    <p style="font-size: 15px;">Please note that it would be wise to keep some</p>
+    <p style="font-size: 15px;">distance from other people no matter the color</p>
+    <p style="font-size: 15px;">of the state. </p> <br> <br>
     <div class="mapdiv">
         <svg
         xmlns="http://www.w3.org/2000/svg"
