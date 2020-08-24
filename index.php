@@ -30,7 +30,7 @@
         height="1730" width="1700"
         version="1.1"
         viewBox="0 0 1000 589"
-        style="position: relative; left: auto; top: auto;"
+        style="position: relative; left: auto; top: -1000;"
         >
         <defs>
             <style type="map/css/style.css"> </style>
