@@ -9,7 +9,7 @@
     <title>US COVID Trends Map</title>
     <link rel="stylesheet" href="map/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
-    <header>
+    <header href="styleAlg.css" rel="stylesheet">
         <div class="container">
             <nav>
                 <ul>
@@ -24,8 +24,8 @@
 </head>
 
 <body>
-    <p style="position: relative; top: 10px;">***</p> 
-    <p style="position: relative; left: 5px; top: 10px;">Click each state to see COVID statistics about them.</p> 
+    <p>***</p> 
+    <p style="position: relative; left: 5px;">Click each state to see COVID statistics about them.</p> 
     <p style="position: relative; left: 5px;">Hover over each state to see the name of the state.</p>
     <p>***</p> <br>
     <p>KEY:</p>
