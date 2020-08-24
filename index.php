@@ -9,7 +9,7 @@
     <title>US COVID Trends Map</title>
     <link rel="stylesheet" href="map/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
-    <header>
+    <!-- <header>
         <div class="container">
             <nav>
                 <ul>
@@ -20,7 +20,7 @@
 
             </nav>
         </div>
-    </header>
+    </header> -->
 </head>
 
 <body>
@@ -1357,6 +1357,18 @@
     </div>
     <p style="position: relative; top: -1435px">Updated every day at 6:00 am PST ↓ </p>
     <p style="position: relative; top: -1410px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
+    <header>
+        <div class="container">
+            <nav>
+                <ul>
+                    <li><a href="index.php">Map</a></li>
+                    <li><a href="algorithm.html">Algorithm</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
 </body>
 
 </html>
