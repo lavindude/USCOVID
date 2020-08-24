@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
     <header>
         <div class="container">
-            <nav style="position: relative; left: -1500px;">
+            <nav>
                 <ul>
                     <li><a href="index.php">Map</a></li>
                     <li><a href="algorithm.html">Algorithm</a></li>
@@ -41,7 +41,7 @@
         height="930" width="1700"
         version="1.1"
         viewBox="0 0 1000 589"
-        style="position: relative; left: 140px; top: -470px"
+        style="position: relative; left: 140px; top: -500px"
         >
         <defs>
             <style type="map/css/style.css"> </style>
