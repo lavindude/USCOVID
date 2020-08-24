@@ -37,12 +37,11 @@
     <p style="">of the state. </p> <br> <br>
     <div class="mapdiv">
         <svg
-        
         xmlns="http://www.w3.org/2000/svg"
         height="1730" width="1700"
         version="1.1"
         viewBox="0 0 1000 589"
-        style="position: relative; left: 140px; top: -920px"
+        style="position: relative; left: 140px; top: -880px"
         >
         <defs>
             <style type="map/css/style.css"> </style>
@@ -1358,8 +1357,6 @@
     </div>
     <p style="position: relative; top: -1450px">Updated every day at 6:00 am PST ↓ </p>
     <p style="position: relative; top: -1445px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
-    <p style="position: relative; top: -1440px">If you have any questions, comments, or concerns, please email me at lavindudev@hotmail.com</p>
-    <p style="position: relative; top: -1435px">Map made by Lavindu Devadithya</p>
 </body>
 
 </html>
