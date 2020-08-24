@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <nav>
-                <ul style="position: relative; left: auto;">
+                <ul style="position: relative; left: 5px;">
                     <li><a href="index.php">Map</a></li>
                     <li><a href="algorithm.html">Algorithm</a></li>
                     <li><a href="contact.html">Contact</a></li>
