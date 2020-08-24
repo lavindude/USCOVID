@@ -1357,7 +1357,7 @@
     </div>
     <p style="position: relative; top: -1435px">Updated every day at 6:00 am PST ↓ </p>
     <p style="position: relative; top: -1410px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
-    <header style="position: relative; top: -3000px;">
+    <header style="position: relative; top: -1500px;">
         <div class="container">
             <nav>
                 <ul>
