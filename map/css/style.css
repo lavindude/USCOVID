@@ -34,7 +34,7 @@ header::after {
 }
 
 nav {
-    float: right;
+    float: left;
 }
 
 nav ul {
