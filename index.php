@@ -13,7 +13,7 @@
         <div class="container">
             <nav>
                 <ul>
-                    <li style="position: relative; left: 5px;"><a href="index.php">Map</a></li>
+                    <li style="position: relative; right: auto;"><a href="index.php">Map</a></li>
                     <li><a href="algorithm.html">Algorithm</a></li>
                     <li><a href="contact.html">Contact</a></li>
                 </ul>
