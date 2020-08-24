@@ -1355,8 +1355,8 @@
         </a>
         </svg>
     </div>
-    <p style="position: relative; top: -912px; font-size: 15px;">Updated every day at 6:00 am PST ↓ </p>
-    <p style="position: relative; top: -910px; font-size: 15px;">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
+    <p style="position: relative; top: -932px; font-size: 15px;">Updated every day at 6:00 am PST ↓ </p>
+    <p style="position: relative; top: -930px; font-size: 15px;">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
 </body>
 
 </html>
