@@ -3,6 +3,7 @@
     <title>State Information</title>
 </head>
 
+<body>
 <?php
     require_once "pdo.php";
     $id = $_GET['state_id'];
@@ -54,3 +55,4 @@
     echo('<p ><a href="./">Back to US Map</a></p>');
 
 ?>
+</body>
