@@ -35,11 +35,8 @@
     <p style="">Please note that it would be wise to keep some</p>
     <p style="">distance from other people no matter the color</p>
     <p style="">of the state. </p> <br> <br>
-    <p style="">Click <a href="algorithm.html">HERE</a> if you want to learn more about</p>
-    <p style="">how the colors are assigned to each state.</p>
     <div class="mapdiv">
         <svg
-        
         xmlns="http://www.w3.org/2000/svg"
         height="1730" width="1700"
         version="1.1"
@@ -1360,8 +1357,6 @@
     </div>
     <p style="position: relative; top: -1450px">Updated every day at 6:00 am PST ↓ </p>
     <p style="position: relative; top: -1445px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
-    <p style="position: relative; top: -1440px">If you have any questions, comments, or concerns, please email me at lavindudev@hotmail.com</p>
-    <p style="position: relative; top: -1435px">Map made by Lavindu Devadithya</p>
 </body>
 
 </html>
