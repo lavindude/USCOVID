@@ -4,8 +4,8 @@
     <title>State Information</title>
 </head>
 
+<body style="font-family: monospace">
 <?php
-    echo('<body style="font-family: \'Work Sans\', sans-serif">');
     require_once "pdo.php";
     $id = $_GET['state_id'];
 
@@ -54,6 +54,5 @@
     echo("<br>");
     echo("**Note that some states may not have 'recovered' data because that data is not obtainable for certain states.**");
     echo('<p ><a href="./">Back to US Map</a></p>');
-    echo("</body>");
 ?>
 </body>
