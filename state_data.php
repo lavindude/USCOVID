@@ -1,6 +1,6 @@
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel='stylesheet' type='text/css'>
     <title>State Information</title>
 </head>
 
