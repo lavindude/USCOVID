@@ -24,17 +24,6 @@
 </head>
 
 <body>
-    <p>***</p> 
-    <p style="position: relative; left: 5px;">Click each state to see COVID statistics about them.</p> 
-    <p style="position: relative; left: 5px;">Hover over each state to see the name of the state.</p>
-    <p>***</p> <br>
-    <p>KEY:</p>
-    <p style="color: #ff000f;">Red = Positive Increase Trend is trending up</p> 
-    <p style="color: #eeff00;">Yellow = Positive Increase Trend is moderate</p> 
-    <p style="color: #1be44f;">Green = Positive Increase Trend is negative</p>  <br>
-    <p style="">Please note that it would be wise to keep some</p>
-    <p style="">distance from other people no matter the color</p>
-    <p style="">of the state. </p> <br> <br>
     <div class="mapdiv">
         <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -1355,6 +1344,17 @@
         </a>
         </svg>
     </div>
+    <p>***</p> 
+    <p style="position: relative; left: 5px;">Click each state to see COVID statistics about them.</p> 
+    <p style="position: relative; left: 5px;">Hover over each state to see the name of the state.</p>
+    <p>***</p> <br>
+    <p>KEY:</p>
+    <p style="color: #ff000f;">Red = Positive Increase Trend is trending up</p> 
+    <p style="color: #eeff00;">Yellow = Positive Increase Trend is moderate</p> 
+    <p style="color: #1be44f;">Green = Positive Increase Trend is negative</p>  <br>
+    <p style="">Please note that it would be wise to keep some</p>
+    <p style="">distance from other people no matter the color</p>
+    <p style="">of the state. </p> <br> <br>
     <p style="position: relative; top: -1450px">Updated every day at 6:00 am PST ↓ </p>
     <p style="position: relative; top: -1445px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
 </body>
