@@ -3,8 +3,8 @@
     <title>State Information</title>
 </head>
 
-<body>
 <?php
+    echo("<body>");
     require_once "pdo.php";
     $id = $_GET['state_id'];
 
@@ -53,6 +53,6 @@
     echo("<br>");
     echo("**Note that some states may not have 'recovered' data because that data is not obtainable for certain states.**");
     echo('<p ><a href="./">Back to US Map</a></p>');
-
+    echo("</body>");
 ?>
 </body>
