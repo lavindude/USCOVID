@@ -27,7 +27,7 @@ th, td {
 }
 
 html {
-    font-family: sans-serif;
+    font-family: monospace;
 }
   
 thead th, tfoot th {
