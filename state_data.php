@@ -4,7 +4,7 @@
     <title>State Information</title>
 </head>
 
-<body style="font-family: 'Work Sans', sans-serif; font-weight: 800;">
+<body style="font-family: 'Work Sans', sans-serif; font-weight: 800; font-size: 20px;">
 <?php
     require_once "pdo.php";
     $id = $_GET['state_id'];
