@@ -12,7 +12,7 @@
     <header>
         <div class="container">
             <nav>
-                <ul>
+                <ul style="position: relative; left: auto;">
                     <li><a href="index.php">Map</a></li>
                     <li><a href="algorithm.html">Algorithm</a></li>
                     <li><a href="contact.html">Contact</a></li>
@@ -1355,7 +1355,7 @@
         </a>
         </svg>
     </div>
-    <p style="position: relative; top: -1435px">Updated every day at 6:00 am PST ↓ </p>
+    <p style="position: relative; top: -1430px">Updated every day at 6:00 am PST ↓ </p>
     <p style="position: relative; top: -1410px">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
 </body>
 
