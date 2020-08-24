@@ -1,10 +1,11 @@
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
     <title>State Information</title>
 </head>
 
 <?php
-    echo("<body>");
+    echo('<body style="font-family: \'Work Sans\', sans-serif">');
     require_once "pdo.php";
     $id = $_GET['state_id'];
 
