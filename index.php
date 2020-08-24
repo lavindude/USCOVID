@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
     <header>
         <div class="container">
-            <nav style="position: relative; left: -900px;">
+            <nav style="position: relative; left: -1500px;">
                 <ul>
                     <li><a href="index.php">Map</a></li>
                     <li><a href="algorithm.html">Algorithm</a></li>
