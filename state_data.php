@@ -1,4 +1,4 @@
-<div style="font-family: 'Work Sans', sans-serif; font-weight: 800;">
+<div style="font-family: 'Work Sans', sans-serif; font-weight: 800; font-size: 25px;">
 
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
