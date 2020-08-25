@@ -1,10 +1,12 @@
+<div style="font-family: 'Work Sans', sans-serif; font-weight: 800;">
+
 <head>
     <link href="css/style.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600" rel='stylesheet' type='text/css'>
     <title>State Information</title>
 </head>
 
-<body style="font-family: 'Work Sans', sans-serif; font-weight: 800; font-size: 20px;">
+<body>
 <?php
     require_once "pdo.php";
     $id = $_GET['state_id'];
@@ -15,7 +17,8 @@
         echo($row['name']);
     }
     
-    echo("</h1>");
+    echo("</h1>"); 
+
 
     echo('<table border="1">');
     echo('<tr><td>');
@@ -56,3 +59,4 @@
     echo('<p ><a href="./">Back to US Map</a></p>');
 ?>
 </body>
+<div>
