@@ -64,8 +64,9 @@ for item in jsonStateData:
     cur.execute(query, insert_tuple)
     stateid += 1
 
+#delete data over 11 days old to avoid overfitting in trends.py
 now = datetime.datetime.now()
-delTime = now - datetime.timedelta(days=13)
+delTime = now - datetime.timedelta(days=11)
 delTime = delTime.date()
 
 cur.execute("DELETE FROM covid WHERE date=%s;", [delTime])
