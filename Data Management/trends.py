@@ -24,7 +24,6 @@ cur = conn1.cursor()
 engine = sqlalchemy.create_engine(*****)
 covid_data = pd.read_sql_table("covid", engine)
 
-
 cur.execute('SELECT MAX(state_data_id) FROM covid;')
 count = cur.fetchone()[0]
 
@@ -59,6 +58,8 @@ for code in codes:
     y_pred = linear.predict(x)
     plt.plot(x, y_pred, color='red')
     plt.scatter(x, y)
+    
+    # uncomment to see graph:
     # plt.xlabel('Day')
     # plt.ylabel('Positive Increase')
     # plt.show()
