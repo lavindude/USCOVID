@@ -24,6 +24,7 @@ jsonStates = json.loads(states)
 stateCoords = open('stateCoords.txt')
 jsonCoords = json.loads(stateCoords)
 
+#insert jSON into database
 stateid = 1
 for item in jsonStateData:
     # date = item['date']
