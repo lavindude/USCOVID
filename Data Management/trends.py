@@ -17,11 +17,11 @@ import numpy as np
 # import mpld3
 
 #python database connection
-conn1 = connect(database='davdlic7h5pev6', host='ec2-50-16-198-4.compute-1.amazonaws.com', user='okuihecsskhgrn', password='63ef2d42c5f65365bb37c5c391a37a9329c29cd9f757c1e0d8a58c595164be50')
+conn1 = connect(****)
 cur = conn1.cursor()
 
 #pandas database connection (used for linear regression)
-engine = sqlalchemy.create_engine('postgresql://okuihecsskhgrn:63ef2d42c5f65365bb37c5c391a37a9329c29cd9f757c1e0d8a58c595164be50@ec2-50-16-198-4.compute-1.amazonaws.com/davdlic7h5pev6')
+engine = sqlalchemy.create_engine(*****)
 covid_data = pd.read_sql_table("covid", engine)
 
 
@@ -51,7 +51,6 @@ for code in codes:
         day += 1  
 
     #linear regression, first convert to pandas series
-    #################################
     x = pd.Series(x).values
     y = pd.Series(y).values
     x = x[:, np.newaxis]
@@ -94,6 +93,5 @@ for code in codes:
     state_id += 1
     continue
 
-################################################
 
 conn1.commit()
