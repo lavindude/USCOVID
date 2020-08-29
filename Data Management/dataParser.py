@@ -6,91 +6,69 @@ from pgdb import connect
 import urllib.request, urllib.parse, urllib.error
 import psycopg2
 from datetime import date
-import sqlalchemy
+import datetime
 
-#AI libraries
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-from sklearn import linear_model
-import numpy as np
-# import mpld3
+stateData = urllib.request.urlopen('https://covidtracking.com/api/v1/states/current.json').read()
+jsonStateData = json.loads(stateData)
 
-#python database connection
-conn1 = connect(****)
+#create a database
+#conn1 = sqlite3.connect('usInfo.sqlite')
+conn1 = connect(***)
 cur = conn1.cursor()
 
-#pandas database connection (used for linear regression)
-engine = sqlalchemy.create_engine(***)
-covid_data = pd.read_sql_table("covid", engine)
+#list of states
+states = open('listOfState.txt')
+jsonStates = json.loads(states)
 
+#coordinates for every state/region
+stateCoords = open('stateCoords.txt')
+jsonCoords = json.loads(stateCoords)
 
-cur.execute('SELECT MAX(state_data_id) FROM covid;')
-count = cur.fetchone()[0]
+stateid = 1
+for item in jsonStateData:
+    # date = item['date']
+    today = date.today()
+    code = item['state']
+    if code == 'AS':
+        continue
+    if code == 'GU':
+        continue
+    if code == 'MP':
+        continue
+    if code == 'PR':
+        continue
+    if code == 'VI':
+        continue
+    if code == 'DC':
+        continue
+    positive = item['positive']
+    recovered = item['recovered']
+    deaths = item['death']
+    positiveIncrease = item['positiveIncrease']
+    deathincrease = item['deathIncrease']
+    state = ''
+    lat = 0
+    lon = 0
 
-codes = ["AK", "AL", "AR", "AZ", "CA", "CO", "CT", "DE", "FL", "GA", "HI", 
-"IA", "ID", "IL", "IN", "KS", "KY", "LA", "MA", "MD", "ME", "MI", "MN", 
-"MO", "MS", "MT", "NC", "ND", "NE", "NH", "NJ", "NM", "NV", "NY", "OH", 
-"OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT", "VA", "VT", "WA", 
-"WI", "WV", "WY"]
+    for item2 in jsonStates:
+        if item2['abbreviation'] == code:
+            state = item2['name']
 
-today = date.today()
-today = str(today)
-state_id = 1
-for code in codes:
-    x = list()
-    y = list()
+    cur.execute('SELECT population FROM states WHERE state_id=%s', [stateid])
+    calc = positive / cur.fetchone()[0]
 
-    cur.execute('SELECT positiveincrease FROM covid WHERE code=%s', [code])
-    p_increase_data = list(cur.fetchall())
+    query = "INSERT INTO Covid (date, state_id, code, positive, recovered, deaths, positiveincrease, deathincrease, positivedivpop) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)"
+    insert_tuple = (today, stateid, code, positive, recovered, deaths, positiveIncrease, deathincrease, calc)
 
-    day = 1
-    for data in p_increase_data:
-        x.append(day)
-        y.append(data[0])
-        day += 1  
+    cur.execute(query, insert_tuple)
+    stateid += 1
 
-    #linear regression, first convert to pandas series
-    x = pd.Series(x).values
-    y = pd.Series(y).values
-    x = x[:, np.newaxis]
-    linear = linear_model.LinearRegression(fit_intercept=True)
-    linear.fit(x, y)
-    y_pred = linear.predict(x)
-    plt.plot(x, y_pred, color='red')
-    plt.scatter(x, y)
-    # plt.xlabel('Day')
-    # plt.ylabel('Positive Increase')
-    # plt.show()
+now = datetime.datetime.now()
+delTime = now - datetime.timedelta(days=13)
+delTime = delTime.date()
 
-    cur.execute('SELECT state_id FROM covid WHERE code=%s', [code])
-    state_id = cur.fetchone()[0]
-
-    m = linear.coef_
-    
-    cur.execute('SELECT positive FROM covid WHERE state_id=%s ORDER BY date DESC', [state_id])
-    positive = cur.fetchone()[0]
-    
-    cur.execute('SELECT population FROM states WHERE state_id=%s', [state_id])
-    population = cur.fetchone()[0]
-
-    #casesDivPop score algorithm:
-    posDivPop_score = positive / population
-    print(posDivPop_score)
-
-    print('The slope is ', m, 'for code =', code)
-    if m > 50 and posDivPop_score > 0.01:
-        cur.execute("UPDATE states SET color='r' WHERE state_id=%s", [state_id])
-        print("Red")
-    else:
-      if m >= 0 and m < 50 and posDivPop_score > 0.007:
-        cur.execute("UPDATE states SET color='y' WHERE state_id=%s", [state_id])
-        print("Yellow")
-      else:
-        cur.execute("UPDATE states SET color='g'WHERE state_id=%s", [state_id])
-        print("Green")
-
-    state_id += 1
-    continue
+cur.execute("DELETE FROM covid WHERE date=%s;", [delTime])
 
 conn1.commit()
+
+print("Parsing complete!")
