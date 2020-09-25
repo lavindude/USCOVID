@@ -45,7 +45,7 @@ for code in codes:
 
     day = 1
     for data in p_increase_data:
-        if data == 0:
+        if data[0] == 0:
             continue
         x.append(day)
         y.append(data[0])
