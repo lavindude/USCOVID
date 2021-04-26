@@ -2,11 +2,11 @@
     require_once "pdo.php";
 ?>
 
-<!DOCTYPE html>
 <html>
 
 <head>
     <title>US COVID Trends Map</title>
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon2.ico" />
     <link rel="stylesheet" href="map/css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Work+Sans:400,600">
     <header href="styleAlg.css" rel="stylesheet">
@@ -24,24 +24,36 @@
 </head>
 
 <body>
+    <?php
+        $data = $pdo->query("SELECT * FROM America");
+        $cases = 0;
+        $deaths = 0;
+        while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
+            $cases = $row['confirmed'];
+            $deaths = $row['deaths'];
+        }
+        $combined1 = "US Confirmed: " . number_format($cases);
+        $combined2 = "US Deaths: " . number_format($deaths);
+        echo("<p>" . $combined1 . "</p>");
+        echo("<p>" . $combined2 . "</p>");
+    ?>
+
     <p>***</p> 
     <p style="position: relative; left: 5px; font-size: 15px;">Click each state to see COVID statistics about them.</p> 
     <p style="position: relative; left: 5px; font-size: 15px;">Hover over each state to see the name of the state.</p>
     <p>***</p> <br>
     <p>KEY:</p>
-    <p style="color: #ff000f; font-size: 15px;">Red = Positive Increase Trend is trending up</p> 
-    <p style="color: #eeff00; font-size: 15px;">Yellow = Positive Increase Trend is moderate</p> 
-    <p style="color: #44BB51; font-size: 15px;">Green = Positive Increase Trend is negative</p>  <br>
-    <p style="font-size: 15px;">Please note that it would be wise to keep some</p>
-    <p style="font-size: 15px;">distance from other people no matter the color</p>
-    <p style="font-size: 15px;">of the state. </p> <br> <br>
+    <p style="font-size: 15px;">Red = Positive Increase Trend is trending up</p> 
+    <p style="font-size: 15px;">Yellow = Positive Increase Trend is moderate</p> 
+    <p style="font-size: 15px;">Green = Positive Increase Trend is negative</p>  <br>
+    <br> <br> 
     <div class="mapdiv">
         <svg
         xmlns="http://www.w3.org/2000/svg"
         height="930" width="1700"
         version="1.1"
         viewBox="0 0 1000 589"
-        style="position: relative; left: 140px; top: -680px"
+        style="position: relative; left: 140px; top: -700px"
         >
         <defs>
             <style type="map/css/style.css"> </style>
@@ -436,7 +448,7 @@
             d="m 461.38694,192.16729 0.7765,-15.14184 0.97063,-20.38326 0.0971,-2.52364 -1.26182,-0.0971 -24.94522,-1.45595 -13.97709,-1.16476 -26.49823,-2.52364 -33.19559,-4.07665 -1.35888,9.51219 -0.0971,0.58237 -0.38825,3.20309 -1.74714,12.52114 -3.30015,25.23641 -0.87357,6.3091 -0.38825,3.20309 -0.19412,1.26182 -2.42658,18.92731 3.78546,0.48531 24.7511,3.00896 1.94126,0.19412 2.32951,0.29119 23.97459,2.32952 19.2185,1.55301 28.82775,1.8442 1.94126,0.0971 0.0971,-2.52364 0.48532,-10.19163 0.87357,-17.76255 0.38825,-7.57092 0.0971,-2.52364 0.0971,-2.62071 z"
             />
         </a>
-        <a xlink:title="Arizona" xlink:href="state_data.php?state_id=3">
+        <a xlink:title="Arkansas" xlink:href="state_data.php?state_id=3">
         <path
             inkscape:connector-curvature="0"
             id="AR"
@@ -774,7 +786,7 @@
             d="m 923.01913,132.86173 -4.36784,-15.91836 0.77651,-5.82378 0,-6.30911 -1.0677,-5.047278 4.17372,-5.532598 0.19413,-1.747136 -2.32952,-8.735681 -1.26182,0.485316 -5.33847,1.941262 -5.24141,2.038326 -12.03583,4.36784 -0.67944,0.194126 4.36784,10.191633 1.45595,9.60924 5.14434,8.05624 4.85316,15.91835 0.19413,-0.0971 0.7765,-0.29119 2.23245,-0.67944 1.94126,-0.67944 5.5326,-1.65007 0.67944,-0.29119 0,0 z"
             />
         </a>
-        <a xlink:title="Alaska" xlink:href="state_data.php?state_id=2">
+        <a xlink:title="Alabama" xlink:href="state_data.php?state_id=2">
         <path
             inkscape:connector-curvature="0"
             id="AL"
@@ -1355,8 +1367,11 @@
         </a>
         </svg>
     </div>
-    <p style="position: relative; top: -871px; font-size: 15px;">Updated every day at 6:00 am PST ↓ </p>
-    <p style="position: relative; top: -870px; font-size: 15px;">Source: <a href="https://covidtracking.com/api/v1/states/current.json">https://covidtracking.com/api/v1/states/current.json</a></p>
+    <p style="position: relative; top: -871px; font-size: 15px;">Updated every day at 6:30 am PST ↓ </p>
+    <p style="position: relative; top: -870px; font-size: 15px;">Source: <a href="https://tinyurl.com/yp32shda">https://tinyurl.com/yp32shda</a></p>
+    <p style="position: relative; top: -850px; font-size: 15px;">Coming soon: Outbreak Predictor</p>
+
+    <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 </body>
 
 </html>
