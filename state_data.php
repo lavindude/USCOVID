@@ -26,8 +26,6 @@
     echo('</td><td>');
     echo('<b>Positive</b>');
     echo('</td><td>');
-    echo('<b>Recovered</b>');
-    echo('</td><td>');
     echo('<b>Deaths<b>');
     echo('</td><td>');
     echo('<b>Δ Positive Cases</b>');
@@ -37,26 +35,42 @@
 
     $data = $pdo->query("SELECT * FROM covid WHERE state_id=$id ORDER BY date DESC");
     while ($row = $data->fetch(PDO::FETCH_ASSOC)) {
-        echo('<tr><td>');
-        echo($row['date']);
-        echo('</td><td>');
-        echo($row['positive']);
-        echo('</td><td>');
-        echo($row['recovered']);
-        echo('</td><td>');
-        echo($row['deaths']);
-        echo('</td><td>');
-        echo($row['positiveincrease']);
-        echo('</td><td>');
-        echo($row['deathincrease']);
-        echo("</td></tr>");
+        if ($row['positiveincrease'] == 0) {
+            echo('<tr><td>');
+            echo($row['date']);
+            echo('</td><td>');
+            echo("No new data");
+            echo('</td><td>');
+            echo("No new data");
+            echo('</td><td>');
+            echo("No new data");
+            echo('</td><td>');
+            echo("No new data");
+            echo("</td></tr>");
+        }
+        
+        else {
+            echo('<tr><td>');
+            echo($row['date']);
+            echo('</td><td>');
+            echo($row['positive']);
+            echo('</td><td>');
+            echo($row['deaths']);
+            echo('</td><td>');
+            echo($row['positiveincrease']);
+            echo('</td><td>');
+            echo($row['deathincrease']);
+            echo("</td></tr>");
+        }
     }
 
     echo("</table>");
 
     echo("<br>");
-    echo("**Note that some states may not have 'recovered' data because that data is not obtainable for certain states.**");
+
     echo('<p ><a href="./">Back to US Map</a></p>');
 ?>
+
+<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
 </body>
 <div>
